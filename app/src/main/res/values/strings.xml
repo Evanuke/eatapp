@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EatApp</string>
+
+    <string name="menu">Menu</string>
+    <string name="create_own">Create Own Meal</string>
+    <string name="ratings">Ratings</string>
+    <string name="specials">Special Offers</string>
+</resources>
