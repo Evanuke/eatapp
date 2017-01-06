@@ -1,6 +1,5 @@
 package com.majstry.eatapp;
 
-
 import com.majstry.eatapp.activities.MainActivity;
 import com.majstry.eatapp.fragments.MainFragment;
 

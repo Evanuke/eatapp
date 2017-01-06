@@ -5,7 +5,7 @@ import android.app.Application;
 import com.majstry.eatapp.activities.MainActivity;
 import com.majstry.eatapp.fragments.MainFragment;
 
-public class MyApplication extends Application{
+public class MyApplication extends Application {
 
     private static AppComponent appComponent;
 
