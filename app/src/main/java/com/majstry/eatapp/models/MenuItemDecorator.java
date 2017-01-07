@@ -50,6 +50,11 @@ public class MenuItemDecorator implements MenuItemInterface {
     }
 
     @Override
+    public MenuItem getOriginalItem() {
+        return menuItem.getOriginalItem();
+    }
+
+    @Override
     public String toString() {
         return description + ", " + new DecimalFormat("0.00").format(price);
     }

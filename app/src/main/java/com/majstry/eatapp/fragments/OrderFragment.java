@@ -13,6 +13,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.majstry.eatapp.R;
+import com.majstry.eatapp.activities.OrderActivity;
 import com.majstry.eatapp.adapters.IngredientsListAdapter;
 import com.majstry.eatapp.base.BaseFragment;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
@@ -112,7 +113,7 @@ public class OrderFragment extends BaseFragment implements MaterialSpinner.OnIte
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        // TODO: 07.01.2017 some new fragment with confirmation or sth
+                        mPresenter.proceedToConfirmation();
                     }
                 })
                 .show();

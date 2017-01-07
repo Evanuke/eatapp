@@ -6,8 +6,11 @@ import com.majstry.eatapp.activities.MainActivity;
 import com.majstry.eatapp.fragments.MainFragment;
 import com.majstry.eatapp.fragments.MenuFragment;
 import com.majstry.eatapp.fragments.OrderFragment;
+import com.majstry.eatapp.fragments.YourOrdersFragment;
 import com.majstry.eatapp.presenters.MenuFragmentPresenter;
+import com.majstry.eatapp.presenters.OrderDetailsFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
+import com.majstry.eatapp.presenters.YourOrdersFragmentPresenter;
 
 import javax.inject.Inject;
 
@@ -41,6 +44,14 @@ public class MyApplication extends Application {
 
     public static void inject(OrderFragmentPresenter orderFragmentPresenter) {
         appComponent.inject(orderFragmentPresenter);
+    }
+
+    public static void inject(OrderDetailsFragmentPresenter orderDetailsFragmentPresenter) {
+        appComponent.inject(orderDetailsFragmentPresenter);
+    }
+
+    public static void inject(YourOrdersFragmentPresenter yourOrdersFragmentPresenter) {
+        appComponent.inject(yourOrdersFragmentPresenter);
     }
 
 }

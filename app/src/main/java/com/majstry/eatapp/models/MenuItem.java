@@ -62,6 +62,11 @@ public class MenuItem implements MenuItemInterface, Serializable {
     }
 
     @Override
+    public MenuItem getOriginalItem() {
+        return this;
+    }
+
+    @Override
     public String toString() {
         return name + ", " + new DecimalFormat("0.00").format(price) + "zł";
     }

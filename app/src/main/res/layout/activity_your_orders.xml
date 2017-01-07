@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.majstry.eatapp.activities.OrderActivity">
+    tools:context="com.majstry.eatapp.activities.MenuActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/activity_order_appBarLayout"
+        android:id="@+id/appBarLayout"
         android:theme="@style/AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -22,11 +22,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
+    <fragment
+        android:name="com.majstry.eatapp.fragments.YourOrdersFragment"
+        android:id="@+id/activity_menu_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/activity_order_content_frame"
-        android:layout_below="@+id/activity_order_appBarLayout">
-    </FrameLayout>
+        tools:layout="@layout/fragment_menu"
+        android:layout_below="@id/appBarLayout" />
 
 </RelativeLayout>

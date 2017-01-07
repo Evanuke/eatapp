@@ -1,7 +1,12 @@
 package com.majstry.eatapp.presenters;
 
+import android.os.Bundle;
+
 import com.majstry.eatapp.DataStore;
 import com.majstry.eatapp.MyApplication;
+import com.majstry.eatapp.activities.OrderActivity;
+import com.majstry.eatapp.base.BaseFragment;
+import com.majstry.eatapp.fragments.OrderDetailsFragment;
 import com.majstry.eatapp.fragments.OrderFragment;
 import com.majstry.eatapp.models.MenuItem;
 import com.majstry.eatapp.models.MenuItemDecorator;
@@ -75,6 +80,15 @@ public class OrderFragmentPresenter {
 
     public ArrayList<MenuItemDecorator> getUsedIngredients() {
         return mUsedIngredients;
+    }
+
+    public void proceedToConfirmation() {
+        OrderActivity orderActivity = (OrderActivity) mFragment.getActivity();
+        BaseFragment fragment = new OrderDetailsFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(OrderDetailsFragment.ORDERED_ITEM, mMenuItem);
+        fragment.setArguments(bundle);
+        orderActivity.changeFragment(fragment);
     }
 
 }

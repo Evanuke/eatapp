@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.majstry.eatapp.models.MenuItem;
 import com.majstry.eatapp.models.MenuItemDecorator;
+import com.majstry.eatapp.models.interfaces.MenuItemInterface;
 
 import java.util.ArrayList;
 
@@ -13,12 +14,14 @@ public class DataStore {
 
     private ArrayList<MenuItem> mMenuItems;
     private ArrayList<MenuItemDecorator> mIngredients;
+    private ArrayList<MenuItemInterface> mOrderedItems;
 
     public DataStore(Context context) {
         mContext = context;
 
         mMenuItems = new ArrayList<>();
         mIngredients = new ArrayList<>();
+        mOrderedItems = new ArrayList<>();
     }
 
     public void prepareMockups() {
@@ -45,12 +48,20 @@ public class DataStore {
         mIngredients.add(tea);
     }
 
+    public ArrayList<MenuItemInterface> getOrders() {
+        return new ArrayList<>(mOrderedItems);
+    }
+
     public ArrayList<MenuItem> getMenuItems() {
         return new ArrayList<>(mMenuItems);
     }
 
     public ArrayList<MenuItemDecorator> getIngredients() {
         return new ArrayList<>(mIngredients);
+    }
+
+    public void saveOrder(MenuItemInterface menuItem) {
+        mOrderedItems.add(menuItem);
     }
 
 }

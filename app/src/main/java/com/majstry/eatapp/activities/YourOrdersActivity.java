@@ -9,15 +9,13 @@ import android.view.View;
 
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.base.BaseActivity;
-import com.majstry.eatapp.base.BaseFragment;
-import com.majstry.eatapp.fragments.OrderFragment;
 
-public class OrderActivity extends BaseActivity {
+public class YourOrdersActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
+        setContentView(R.layout.activity_your_orders);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
@@ -37,20 +35,10 @@ public class OrderActivity extends BaseActivity {
                 finish();
             }
         });
-
-        changeFragment(new OrderFragment());
-    }
-
-    public void changeFragment(BaseFragment baseFragment) {
-        if (getSupportFragmentManager().getFragments() == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.activity_order_content_frame, baseFragment).commit();
-        } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.activity_order_content_frame, baseFragment).commit();
-        }
     }
 
     public static void startActivity(Context context) {
-        Intent intent = new Intent(context, OrderActivity.class);
+        Intent intent = new Intent(context, YourOrdersActivity.class);
         context.startActivity(intent);
     }
 

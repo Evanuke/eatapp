@@ -1,5 +1,7 @@
 package com.majstry.eatapp.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
@@ -11,6 +13,7 @@ import android.view.View;
 import com.majstry.eatapp.MyApplication;
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.base.BaseActivity;
+import com.majstry.eatapp.utils.snackbars.SnackbarUtil;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.holder.DimenHolder;
@@ -23,6 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemClickListener {
+
+    private static final String START_WITH_INFO = "start_with_info";
 
     @BindView(R.id.activity_main_toolbar)
     Toolbar mToolbar;
@@ -41,6 +46,14 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
 
         setupNavigationDrawer();
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+
+        showInfoIfNeeded();
+    }
+
+    private void showInfoIfNeeded() {
+        if (getIntent().getBooleanExtra(START_WITH_INFO, false)) {
+            SnackbarUtil.showInfoSnackbar("Zamówienie zostało poprawnie złożone!");
+        }
     }
 
     private void setupNavigationDrawer() {
@@ -55,10 +68,11 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
     private ArrayList<IDrawerItem> generateDrawerItems() {
         ArrayList<IDrawerItem> drawerItems = new ArrayList<>();
 
-        drawerItems.add(new PrimaryDrawerItem().withName("Menu").withTag(new MenuActivity()).withIcon(R.drawable.ic_local_pizza_black_24dp));
-        drawerItems.add(new PrimaryDrawerItem().withName("Własne zamówienie").withTag(new OrderActivity()).withIcon(R.drawable.ic_shopping_cart_black_24dp));
+        drawerItems.add(new PrimaryDrawerItem().withName("Menu").withTag(new MenuActivity()).withIcon(R.drawable.ic_restaurant_menu_black_24dp));
+        drawerItems.add(new PrimaryDrawerItem().withName("Własne zamówienie").withTag(new OrderActivity()).withIcon(R.drawable.ic_add_shopping_cart_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Oceny").withTag(null).withIcon(R.drawable.ic_star_border_black_24dp));
-        drawerItems.add(new PrimaryDrawerItem().withName("Promocje").withTag(null).withIcon(R.drawable.ic_priority_high_black_24dp));
+        drawerItems.add(new PrimaryDrawerItem().withName("Promocje").withTag(null).withIcon(R.drawable.ic_local_offer_black_24dp));
+        drawerItems.add(new PrimaryDrawerItem().withName("Twoje zamówienia").withTag(new YourOrdersActivity()).withIcon(R.drawable.ic_shopping_cart_black_24dp));
 
         return drawerItems;
     }
@@ -100,6 +114,8 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
             MenuActivity.startActivity(this);
         } else if (tag instanceof OrderActivity) {
             OrderActivity.startActivity(this);
+        } else if (tag instanceof YourOrdersActivity) {
+            YourOrdersActivity.startActivity(this);
         }
 
         return false;
