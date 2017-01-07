@@ -10,10 +10,11 @@ import android.view.ViewGroup;
 
 import com.majstry.eatapp.MyApplication;
 import com.majstry.eatapp.R;
+import com.majstry.eatapp.base.BaseFragment;
 
 import butterknife.ButterKnife;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
 
     @Nullable
     @Override
