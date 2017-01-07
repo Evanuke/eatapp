@@ -23,6 +23,10 @@ public class AppModule {
         return mApplication.getApplicationContext();
     }
 
-
+    @Provides
+    @Singleton
+    DataStore provideDataStore() {
+        return new DataStore(provideContext());
+    }
 
 }

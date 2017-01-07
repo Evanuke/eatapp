@@ -5,4 +5,6 @@
     <string name="create_own">Create Own Meal</string>
     <string name="ratings">Ratings</string>
     <string name="specials">Special Offers</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="action_settings">Settings</string>
 </resources>
