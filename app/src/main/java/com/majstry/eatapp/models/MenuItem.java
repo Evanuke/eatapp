@@ -3,6 +3,7 @@ package com.majstry.eatapp.models;
 import com.majstry.eatapp.models.interfaces.MenuItemInterface;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class MenuItem implements MenuItemInterface, Serializable {
 
@@ -58,5 +59,10 @@ public class MenuItem implements MenuItemInterface, Serializable {
     @Override
     public float getFinalPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return name + ", " + new DecimalFormat("0.00").format(price) + "zł";
     }
 }

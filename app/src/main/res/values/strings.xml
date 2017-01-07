@@ -2,9 +2,9 @@
     <string name="app_name">EatApp</string>
 
     <string name="menu">Menu</string>
-    <string name="create_own">Create Own Meal</string>
-    <string name="ratings">Ratings</string>
-    <string name="specials">Special Offers</string>
+    <string name="create_own">Własne zamówienie</string>
+    <string name="ratings">Oceny</string>
+    <string name="specials">Oferty specjalne</string>
     <string name="title_activity_menu">Menu</string>
     <string name="action_settings">Settings</string>
 </resources>

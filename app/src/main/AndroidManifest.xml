@@ -25,6 +25,14 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
+
+        <activity
+            android:name=".activities.OrderActivity"
+            android:label="Stwórz własne danie"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
     </application>
 
 </manifest>

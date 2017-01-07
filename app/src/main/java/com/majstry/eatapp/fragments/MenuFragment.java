@@ -12,7 +12,9 @@ import com.majstry.eatapp.DataStore;
 import com.majstry.eatapp.MyApplication;
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.adapters.MenuItemRecyclerAdapter;
+import com.majstry.eatapp.base.BaseFragment;
 import com.majstry.eatapp.models.MenuItem;
+import com.majstry.eatapp.presenters.MenuFragmentPresenter;
 
 import java.util.ArrayList;
 
@@ -21,10 +23,9 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MenuFragment extends Fragment {
+public class MenuFragment extends BaseFragment {
 
-    @Inject
-    DataStore mDataStore;
+    private MenuFragmentPresenter mPresenter;
 
     @BindView(R.id.fragment_menu_rv)
     RecyclerView mMenuRv;
@@ -35,7 +36,7 @@ public class MenuFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
         ButterKnife.bind(this, view);
-        MyApplication.inject(this);
+        mPresenter = new MenuFragmentPresenter(this);
 
         setupMenuItems();
 
@@ -43,7 +44,7 @@ public class MenuFragment extends Fragment {
     }
 
     private void setupMenuItems() {
-        ArrayList<MenuItem> menuItems = mDataStore.getMenuItems();
+        ArrayList<MenuItem> menuItems = mPresenter.getMenuItems();
 
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
         MenuItemRecyclerAdapter adapter = new MenuItemRecyclerAdapter(getContext(), menuItems);

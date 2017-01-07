@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.majstry.eatapp.MyApplication;
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.activities.MenuActivity;
+import com.majstry.eatapp.activities.OrderActivity;
 import com.majstry.eatapp.base.BaseFragment;
 import com.majstry.eatapp.utils.snackbars.SnackbarUtil;
 
@@ -17,16 +18,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainFragment extends BaseFragment {
-
-    @OnClick(R.id.fragment_main_specials_tv)
-    void onSpecialOffersClicked() {
-        SnackbarUtil.showErrorSnackbar("Test");
-    }
-
-    @OnClick(R.id.fragment_main_menu_tv)
-    void onMenuClicked() {
-        MenuActivity.startActivity(getContext());
-    }
 
     @Nullable
     @Override

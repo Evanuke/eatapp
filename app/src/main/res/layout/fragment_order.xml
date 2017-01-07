@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="6dp"
+            android:text="Element podstawowy"/>
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:elevation="3dp"
+            app:ms_arrow_tint = "@color/colorAccent"
+            android:id="@+id/fragment_order_spinner"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:text="Dodatkowe składniki"/>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:elevation="3dp"
+            android:id="@+id/fragment_order_ingredients_lv">
+        </ListView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:text="Zamówienie:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_order_order_desc_tv"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:gravity="center" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:text="Cena"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:text="33,50zł"
+            android:textColor="@color/black"
+            android:id="@+id/fragment_order_final_price_tv"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fragment_order_save_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_done_white_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fragment_order_add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginBottom="85dp"
+        android:layout_marginRight="25dp"
+        app:fabSize="mini"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:src="@drawable/ic_add_white_24dp"
+        app:layout_anchor="@id/fragment_order_save_fab"
+        app:layout_anchorGravity="top|end" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -4,22 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.base.BaseActivity;
 
-public class MenuActivity extends BaseActivity {
+public class OrderActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_order);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
@@ -42,7 +39,7 @@ public class MenuActivity extends BaseActivity {
     }
 
     public static void startActivity(Context context) {
-        Intent intent = new Intent(context, MenuActivity.class);
+        Intent intent = new Intent(context, OrderActivity.class);
         context.startActivity(intent);
     }
 
