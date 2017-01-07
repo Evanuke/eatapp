@@ -10,4 +10,7 @@
     <color name="red">#FF0000</color>
     <color name="green">#00FF00</color>
     <color name="blue">#0000FF</color>
+
+    <color name="snackbar_info_color">#2E7D32</color>
+    <color name="snackbar_error_color">#C62828</color>
 </resources>
