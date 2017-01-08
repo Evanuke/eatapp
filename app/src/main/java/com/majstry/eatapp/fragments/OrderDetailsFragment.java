@@ -1,15 +1,12 @@
 package com.majstry.eatapp.fragments;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -17,15 +14,10 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.majstry.eatapp.R;
-import com.majstry.eatapp.activities.MainActivity;
 import com.majstry.eatapp.activities.YourOrdersActivity;
-import com.majstry.eatapp.adapters.IngredientsListAdapter;
 import com.majstry.eatapp.base.BaseFragment;
-import com.majstry.eatapp.models.MenuItem;
 import com.majstry.eatapp.models.interfaces.MenuItemInterface;
 import com.majstry.eatapp.presenters.OrderDetailsFragmentPresenter;
-import com.majstry.eatapp.presenters.OrderFragmentPresenter;
-import com.majstry.eatapp.utils.snackbars.SnackbarUtil;
 
 import java.text.DecimalFormat;
 
@@ -82,8 +74,8 @@ public class OrderDetailsFragment extends BaseFragment implements MaterialSpinne
 
     private void setupLayout() {
         Glide.with(this).load(mPresenter.getMenuItem().getOriginalItem().getImageUrl()).centerCrop().into(mOrderIv);
-        mDescTv.setText(mPresenter.getMenuItem().getFinalDescription());
-        mPriceTv.setText(new DecimalFormat("#.##").format(mPresenter.getMenuItem().getFinalPrice()) + "zł");
+        mDescTv.setText(mPresenter.getMenuItem().getDescription());
+        mPriceTv.setText(new DecimalFormat("#.##").format(mPresenter.getMenuItem().getPrice()) + "zł");
         mDelieverSpinner.setItems("Odbiór w lokalu", "Dowóz");
         mDelieverSpinner.setOnItemSelectedListener(this);
     }

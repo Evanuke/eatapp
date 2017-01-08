@@ -44,7 +44,7 @@ public class MenuItemRecyclerAdapter extends RecyclerView.Adapter {
 
         ViewHolder viewHolder = ((ViewHolder) holder);
 
-        String price = new DecimalFormat("0.00").format(item.getFinalPrice()) + "zł";
+        String price = new DecimalFormat("0.00").format(item.getPrice()) + "zł";
 
         viewHolder.nameTv.setText(item.getName());
         viewHolder.priceTv.setText(price);

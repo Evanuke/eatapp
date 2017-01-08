@@ -2,7 +2,6 @@ package com.majstry.eatapp.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.majstry.eatapp.R;
-import com.majstry.eatapp.activities.OrderActivity;
 import com.majstry.eatapp.adapters.IngredientsListAdapter;
 import com.majstry.eatapp.base.BaseFragment;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
@@ -77,8 +75,8 @@ public class OrderFragment extends BaseFragment implements MaterialSpinner.OnIte
     }
 
     private void updateLayout() {
-        mOrderDescTv.setText(mPresenter.getMenuItem().getFinalDescription());
-        mPriceTv.setText(new DecimalFormat("0.00").format(mPresenter.getMenuItem().getFinalPrice()) + "zł");
+        mOrderDescTv.setText(mPresenter.getMenuItem().getDescription());
+        mPriceTv.setText(new DecimalFormat("0.00").format(mPresenter.getMenuItem().getPrice()) + "zł");
 
         IngredientsListAdapter adapter = new IngredientsListAdapter(getContext(), mPresenter.getUsedIngredients());
         mIngredientsLv.setAdapter(adapter);

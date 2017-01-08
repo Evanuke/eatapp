@@ -19,14 +19,6 @@ public class MenuItemDecorator implements MenuItemInterface {
         return menuItem;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
     public void setMenuItem(MenuItemInterface menuItem) {
         this.menuItem = menuItem;
     }
@@ -40,13 +32,13 @@ public class MenuItemDecorator implements MenuItemInterface {
     }
 
     @Override
-    public String getFinalDescription() {
-        return menuItem.getFinalDescription() + " + " + description;
+    public String getDescription() {
+        return menuItem.getDescription() + " + " + description;
     }
 
     @Override
-    public float getFinalPrice() {
-        return menuItem.getFinalPrice() + price;
+    public float getPrice() {
+        return menuItem.getPrice() + price;
     }
 
     @Override

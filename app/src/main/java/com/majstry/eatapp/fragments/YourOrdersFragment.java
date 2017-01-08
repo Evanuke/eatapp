@@ -2,17 +2,13 @@ package com.majstry.eatapp.fragments;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.dexafree.materialList.card.Card;
 import com.dexafree.materialList.card.CardProvider;
-import com.dexafree.materialList.card.OnActionClickListener;
-import com.dexafree.materialList.card.action.TextViewAction;
 import com.dexafree.materialList.view.MaterialListView;
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.activities.OrderActivity;
@@ -66,9 +62,9 @@ public class YourOrdersFragment extends BaseFragment {
             Card card = new Card.Builder(getContext())
                     .withProvider(new CardProvider())
                     .setLayout(R.layout.card_layout)
-                    .setTitle(item.getFinalDescription())
+                    .setTitle(item.getDescription())
                     .setTitleColor(ContextCompat.getColor(getContext(), R.color.white))
-                    .setDescription(new DecimalFormat("0.00").format(item.getFinalPrice()) + "zł")
+                    .setDescription(new DecimalFormat("0.00").format(item.getPrice()) + "zł")
                     .setDrawable(item.getOriginalItem().getImageUrl())
                     .endConfig()
                     .build();

@@ -6,8 +6,8 @@ import java.io.Serializable;
 
 public interface MenuItemInterface extends Serializable {
 
-    String getFinalDescription();
-    float getFinalPrice();
+    String getDescription();
+    float getPrice();
     MenuItem getOriginalItem();
 
 }

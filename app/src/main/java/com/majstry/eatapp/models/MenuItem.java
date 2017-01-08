@@ -35,16 +35,8 @@ public class MenuItem implements MenuItemInterface, Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
     public void setPrice(float price) {
         this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
@@ -52,12 +44,12 @@ public class MenuItem implements MenuItemInterface, Serializable {
     }
 
     @Override
-    public String getFinalDescription() {
+    public String getDescription() {
         return description;
     }
 
     @Override
-    public float getFinalPrice() {
+    public float getPrice() {
         return price;
     }
 
