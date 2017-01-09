@@ -6,11 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.models.MenuItem;
+import com.majstry.eatapp.models.interfaces.OnMenuItemClickListener;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -18,10 +21,11 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MenuItemRecyclerAdapter extends RecyclerView.Adapter {
+public class MenuItemRecyclerAdapter extends RecyclerView.Adapter implements View.OnClickListener {
 
     private Context mContext;
     private ArrayList<MenuItem> mMenuItems;
+    private OnMenuItemClickListener mListener;
 
     public MenuItemRecyclerAdapter(Context context, ArrayList<MenuItem> menuItems) {
         mContext = context;
@@ -52,6 +56,7 @@ public class MenuItemRecyclerAdapter extends RecyclerView.Adapter {
                 .load(item.getImageUrl())
                 .centerCrop()
                 .into(viewHolder.imageView);
+        viewHolder.itemRl.setOnClickListener(this);
     }
 
     @Override
@@ -59,8 +64,22 @@ public class MenuItemRecyclerAdapter extends RecyclerView.Adapter {
         return mMenuItems.size();
     }
 
+    @Override
+    public void onClick(View view) {
+        MenuItem menuItem = (MenuItem) view.getTag();
+        if (menuItem != null) {
+            mListener.onMenuItemClicked(menuItem);
+        }
+    }
+
+    public void setOnMenuItemClickListener(OnMenuItemClickListener onMenuItemClickListener) {
+        mListener = onMenuItemClickListener;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.menu_item_recycler_item_rl)
+        RelativeLayout itemRl;
         @BindView(R.id.menu_item_recycler_iv)
         ImageView imageView;
         @BindView(R.id.menu_item_recycler_name_tv)
