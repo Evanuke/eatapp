@@ -12,6 +12,7 @@
     <color name="blue">#0000FF</color>
 
     <color name="transparent_black">#82000000</color>
+    <color name="transparent_green">#8200FF00</color>
 
     <color name="snackbar_info_color">#2E7D32</color>
     <color name="snackbar_error_color">#C62828</color>

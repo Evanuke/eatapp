@@ -1,9 +1,11 @@
 package com.majstry.eatapp;
 
 import android.content.Context;
+import android.support.v7.view.menu.MenuWrapperFactory;
 
 import com.majstry.eatapp.models.MenuItem;
 import com.majstry.eatapp.models.MenuItemDecorator;
+import com.majstry.eatapp.models.SpecialOffer;
 import com.majstry.eatapp.models.interfaces.MenuItemInterface;
 
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ public class DataStore {
     private ArrayList<MenuItem> mMenuItems;
     private ArrayList<MenuItemDecorator> mIngredients;
     private ArrayList<MenuItemInterface> mOrderedItems;
+    private ArrayList<SpecialOffer> mSpecialOffers;
 
     public DataStore(Context context) {
         mContext = context;
@@ -22,6 +25,7 @@ public class DataStore {
         mMenuItems = new ArrayList<>();
         mIngredients = new ArrayList<>();
         mOrderedItems = new ArrayList<>();
+        mSpecialOffers = new ArrayList<>();
     }
 
     public void prepareMockups() {
@@ -46,6 +50,12 @@ public class DataStore {
         mIngredients.add(olives);
         mIngredients.add(cheese);
         mIngredients.add(tea);
+
+        SpecialOffer soDinner = new SpecialOffer("Zestaw Obiadowy", 0.75f, false);
+        SpecialOffer soMeat = new SpecialOffer("Pieczeń", 0.85f, false);
+
+        mSpecialOffers.add(soDinner);
+        mSpecialOffers.add(soMeat);
     }
 
     public ArrayList<MenuItemInterface> getOrders() {
@@ -60,8 +70,21 @@ public class DataStore {
         return new ArrayList<>(mIngredients);
     }
 
+    public ArrayList<SpecialOffer> getSpecialOffers() {
+        return new ArrayList<>(mSpecialOffers);
+    }
+
     public void saveOrder(MenuItemInterface menuItem) {
         mOrderedItems.add(menuItem);
+    }
+
+    public void setDiscountMenuItem(MenuItem menuItem) {
+        for (MenuItem m : mMenuItems) {
+            if (m.equals(menuItem)) {
+                int index = mMenuItems.indexOf(m);
+                mMenuItems.set(index, menuItem);
+            }
+        }
     }
 
 }

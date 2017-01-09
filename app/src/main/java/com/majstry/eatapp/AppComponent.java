@@ -7,6 +7,7 @@ import com.majstry.eatapp.fragments.OrderFragment;
 import com.majstry.eatapp.presenters.MenuFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderDetailsFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
+import com.majstry.eatapp.presenters.SpecialOffersFragmentPresenter;
 import com.majstry.eatapp.presenters.YourOrdersFragmentPresenter;
 
 import javax.inject.Singleton;
@@ -24,5 +25,6 @@ public interface AppComponent {
     void inject(OrderFragmentPresenter orderFragmentPresenter);
     void inject(OrderDetailsFragmentPresenter orderDetailsFragmentPresenter);
     void inject(YourOrdersFragmentPresenter yourOrdersFragmentPresenter);
+    void inject(SpecialOffersFragmentPresenter specialOffersFragmentPresenter);
 
 }

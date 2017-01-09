@@ -29,6 +29,13 @@
         </activity>
 
         <activity
+            android:name=".activities.SpecialOffersActivity"
+            android:label="Promocje"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
+        <activity
             android:name=".activities.OrderActivity"
             android:label="Stwórz własne danie"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

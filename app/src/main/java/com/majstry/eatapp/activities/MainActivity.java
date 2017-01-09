@@ -13,6 +13,7 @@ import android.view.View;
 import com.majstry.eatapp.MyApplication;
 import com.majstry.eatapp.R;
 import com.majstry.eatapp.base.BaseActivity;
+import com.majstry.eatapp.models.SpecialOffer;
 import com.majstry.eatapp.utils.snackbars.SnackbarUtil;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -71,7 +72,7 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
         drawerItems.add(new PrimaryDrawerItem().withName("Menu").withTag(new MenuActivity()).withIcon(R.drawable.ic_restaurant_menu_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Własne zamówienie").withTag(new OrderActivity()).withIcon(R.drawable.ic_add_shopping_cart_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Oceny").withTag(null).withIcon(R.drawable.ic_star_border_black_24dp));
-        drawerItems.add(new PrimaryDrawerItem().withName("Promocje").withTag(null).withIcon(R.drawable.ic_local_offer_black_24dp));
+        drawerItems.add(new PrimaryDrawerItem().withName("Promocje").withTag(new SpecialOffersActivity()).withIcon(R.drawable.ic_local_offer_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Twoje zamówienia").withTag(new YourOrdersActivity()).withIcon(R.drawable.ic_shopping_cart_black_24dp));
 
         return drawerItems;
@@ -116,6 +117,8 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
             OrderActivity.startActivity(this);
         } else if (tag instanceof YourOrdersActivity) {
             YourOrdersActivity.startActivity(this);
+        } else if (tag instanceof SpecialOffersActivity) {
+            SpecialOffersActivity.startActivity(this);
         }
 
         return false;

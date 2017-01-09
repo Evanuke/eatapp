@@ -10,6 +10,7 @@ import com.majstry.eatapp.fragments.YourOrdersFragment;
 import com.majstry.eatapp.presenters.MenuFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderDetailsFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
+import com.majstry.eatapp.presenters.SpecialOffersFragmentPresenter;
 import com.majstry.eatapp.presenters.YourOrdersFragmentPresenter;
 
 import javax.inject.Inject;
@@ -36,6 +37,10 @@ public class MyApplication extends Application {
 
     public static void inject(MenuFragmentPresenter menuFragmentPresenter) {
         appComponent.inject(menuFragmentPresenter);
+    }
+
+    public static void inject(SpecialOffersFragmentPresenter specialOffersFragmentPresenter) {
+        appComponent.inject(specialOffersFragmentPresenter);
     }
 
     public static void inject(MainFragment mainFragment) {
