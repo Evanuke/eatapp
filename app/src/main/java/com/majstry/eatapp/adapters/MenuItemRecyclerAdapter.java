@@ -50,13 +50,14 @@ public class MenuItemRecyclerAdapter extends RecyclerView.Adapter implements Vie
 
         String price = new DecimalFormat("0.00").format(item.getPrice()) + "zł";
 
+        viewHolder.itemView.setTag(item);
         viewHolder.nameTv.setText(item.getName());
         viewHolder.priceTv.setText(price);
         Glide.with(mContext)
                 .load(item.getImageUrl())
                 .centerCrop()
                 .into(viewHolder.imageView);
-        viewHolder.itemRl.setOnClickListener(this);
+        viewHolder.itemView.setOnClickListener(this);
     }
 
     @Override

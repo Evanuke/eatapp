@@ -59,7 +59,7 @@ public class MenuFragment extends BaseFragment implements OnMenuItemClickListene
                 .positiveColorRes(R.color.accent)
                 .negativeColorRes(R.color.accent)
                 .content(menuItem.getDescription() + "\n"
-                        + menuItem.getPrice())
+                        + menuItem.getPrice() + " zl")
                 .positiveText("OK")
                 .canceledOnTouchOutside(true)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
