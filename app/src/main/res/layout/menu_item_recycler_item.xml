@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="wrap_content"
-    android:paddingTop="3dp"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    android:orientation="horizontal"
+    android:paddingTop="3dp">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@android:drawable/arrow_up_float"
-        android:visibility="visible"
-        android:id="@+id/menu_item_recycler_iv"/>
+    <RelativeLayout
+        android:id="@+id/menu_item_recycler_item_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:background="@color/transparent_black">
+        <ImageView
+            android:id="@+id/menu_item_recycler_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/arrow_up_float"
+            android:visibility="visible" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="NAZWA"
-            android:textColor="@color/white"
-            android:id="@+id/menu_item_recycler_name_tv"/>
+            android:layout_centerInParent="true"
+            android:background="@color/transparent_black"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="30.99zł"
-            android:textColor="@color/white"
-            android:id="@+id/menu_item_recycler_price_tv"/>
+            <TextView
+                android:id="@+id/menu_item_recycler_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                tools:text="NAZWA" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/menu_item_recycler_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                tools:text="30.99zł" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
