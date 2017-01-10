@@ -4,6 +4,7 @@ import com.majstry.eatapp.activities.MainActivity;
 import com.majstry.eatapp.fragments.MainFragment;
 import com.majstry.eatapp.fragments.MenuFragment;
 import com.majstry.eatapp.fragments.OrderFragment;
+import com.majstry.eatapp.presenters.MainFragmentPresenter;
 import com.majstry.eatapp.presenters.MenuFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderDetailsFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
@@ -19,7 +20,7 @@ import dagger.Component;
 public interface AppComponent {
 
     void inject(MainActivity mainActivity);
-    void inject(MainFragment mainFragment);
+    void inject(MainFragmentPresenter mainFragmentPresenter);
     void inject(MyApplication myApplication);
     void inject(MenuFragmentPresenter menuFragmentPresenter);
     void inject(OrderFragmentPresenter orderFragmentPresenter);

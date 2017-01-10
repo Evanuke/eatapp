@@ -5,13 +5,24 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/fragment_main_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:textSize="17sp"
+        android:layout_marginBottom="20dp"
+        android:textSize="25sp"
         android:textColor="@color/black"
         android:text="Nowości"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/fragment_main_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_main_rv"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

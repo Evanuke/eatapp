@@ -5,6 +5,7 @@ import android.support.v7.view.menu.MenuWrapperFactory;
 
 import com.majstry.eatapp.models.MenuItem;
 import com.majstry.eatapp.models.MenuItemDecorator;
+import com.majstry.eatapp.models.News;
 import com.majstry.eatapp.models.SpecialOffer;
 import com.majstry.eatapp.models.interfaces.MenuItemInterface;
 
@@ -18,6 +19,7 @@ public class DataStore {
     private ArrayList<MenuItemDecorator> mIngredients;
     private ArrayList<MenuItemInterface> mOrderedItems;
     private ArrayList<SpecialOffer> mSpecialOffers;
+    private ArrayList<News> mNewses;
 
     public DataStore(Context context) {
         mContext = context;
@@ -26,6 +28,7 @@ public class DataStore {
         mIngredients = new ArrayList<>();
         mOrderedItems = new ArrayList<>();
         mSpecialOffers = new ArrayList<>();
+        mNewses = new ArrayList<>();
     }
 
     public void prepareMockups() {
@@ -56,6 +59,14 @@ public class DataStore {
 
         mSpecialOffers.add(soDinner);
         mSpecialOffers.add(soMeat);
+
+        News newPizza = new News("Sezonowa oferta - Pizza szefa!", "Tylko w tym tygodniu! Wyjątkowa oferta\nPizza Szefa według legendarnego przepisu.\nSprawdź menu!");
+        News newIngredients = new News("Dodaliśmy nowe dodatki do zamówień", "Sprawdź! Dostępne tylko przez aplikację.");
+        News newOrder = new News("Od Stycznia dowóz do domu!", "");
+
+        mNewses.add(newPizza);
+        mNewses.add(newIngredients);
+        mNewses.add(newOrder);
     }
 
     public ArrayList<MenuItemInterface> getOrders() {
@@ -72,6 +83,10 @@ public class DataStore {
 
     public ArrayList<SpecialOffer> getSpecialOffers() {
         return new ArrayList<>(mSpecialOffers);
+    }
+
+    public ArrayList<News> getNewses() {
+        return new ArrayList<>(mNewses);
     }
 
     public void saveOrder(MenuItemInterface menuItem) {
