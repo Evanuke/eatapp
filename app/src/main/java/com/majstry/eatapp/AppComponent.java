@@ -8,6 +8,7 @@ import com.majstry.eatapp.presenters.MainFragmentPresenter;
 import com.majstry.eatapp.presenters.MenuFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderDetailsFragmentPresenter;
 import com.majstry.eatapp.presenters.OrderFragmentPresenter;
+import com.majstry.eatapp.presenters.RatingsFragmentPresenter;
 import com.majstry.eatapp.presenters.SpecialOffersFragmentPresenter;
 import com.majstry.eatapp.presenters.YourOrdersFragmentPresenter;
 
@@ -27,5 +28,6 @@ public interface AppComponent {
     void inject(OrderDetailsFragmentPresenter orderDetailsFragmentPresenter);
     void inject(YourOrdersFragmentPresenter yourOrdersFragmentPresenter);
     void inject(SpecialOffersFragmentPresenter specialOffersFragmentPresenter);
+    void inject(RatingsFragmentPresenter ratingsFragmentPresenter);
 
 }

@@ -6,6 +6,7 @@ import android.support.v7.view.menu.MenuWrapperFactory;
 import com.majstry.eatapp.models.MenuItem;
 import com.majstry.eatapp.models.MenuItemDecorator;
 import com.majstry.eatapp.models.News;
+import com.majstry.eatapp.models.Rating;
 import com.majstry.eatapp.models.SpecialOffer;
 import com.majstry.eatapp.models.interfaces.MenuItemInterface;
 
@@ -20,6 +21,7 @@ public class DataStore {
     private ArrayList<MenuItemInterface> mOrderedItems;
     private ArrayList<SpecialOffer> mSpecialOffers;
     private ArrayList<News> mNewses;
+    private ArrayList<Rating> mRatings;
 
     public DataStore(Context context) {
         mContext = context;
@@ -29,6 +31,7 @@ public class DataStore {
         mOrderedItems = new ArrayList<>();
         mSpecialOffers = new ArrayList<>();
         mNewses = new ArrayList<>();
+        mRatings = new ArrayList<>();
     }
 
     public void prepareMockups() {
@@ -67,6 +70,17 @@ public class DataStore {
         mNewses.add(newPizza);
         mNewses.add(newIngredients);
         mNewses.add(newOrder);
+
+        Rating ratedSalad = new Rating("Sałatka grecka", 3, "http://www.codogara.pl/wp-content/uploads/2015/05/salatkagrecka3.jpg");
+        Rating ratedPizza = new Rating("Pizza szefa", 5, "http://www.zajadam.pl/wp-content/uploads/2014/08/pizza-z-pomidorami-4-469x313.jpg");
+
+        mRatings.add(ratedSalad);
+        mRatings.add(ratedPizza);
+
+    }
+
+    public ArrayList<Rating> getRatings() {
+        return new ArrayList<>(mRatings);
     }
 
     public ArrayList<MenuItemInterface> getOrders() {

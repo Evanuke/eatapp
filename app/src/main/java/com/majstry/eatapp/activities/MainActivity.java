@@ -71,7 +71,7 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
 
         drawerItems.add(new PrimaryDrawerItem().withName("Menu").withTag(new MenuActivity()).withIcon(R.drawable.ic_restaurant_menu_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Własne zamówienie").withTag(new OrderActivity()).withIcon(R.drawable.ic_add_shopping_cart_black_24dp));
-        drawerItems.add(new PrimaryDrawerItem().withName("Oceny").withTag(null).withIcon(R.drawable.ic_star_border_black_24dp));
+        drawerItems.add(new PrimaryDrawerItem().withName("Oceny").withTag(new RatingsActivity()).withIcon(R.drawable.ic_star_border_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Promocje").withTag(new SpecialOffersActivity()).withIcon(R.drawable.ic_local_offer_black_24dp));
         drawerItems.add(new PrimaryDrawerItem().withName("Twoje zamówienia").withTag(new YourOrdersActivity()).withIcon(R.drawable.ic_shopping_cart_black_24dp));
 
@@ -119,6 +119,8 @@ public class MainActivity extends BaseActivity implements Drawer.OnDrawerItemCli
             YourOrdersActivity.startActivity(this);
         } else if (tag instanceof SpecialOffersActivity) {
             SpecialOffersActivity.startActivity(this);
+        } else if (tag instanceof RatingsActivity) {
+            RatingsActivity.startActivity(this);
         }
 
         return false;
